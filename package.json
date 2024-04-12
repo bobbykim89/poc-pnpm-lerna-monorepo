@@ -1,0 +1,70 @@
+{
+  "name": "poc-lerna-pnpm",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "story:dev": "storybook dev -p 6006",
+    "build-storybook": "lerna run build && storybook build -o dist",
+    "package:build": "lerna run build",
+    "package:clear": "lerna clean",
+    "storybook": "storybook dev -p 6006"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-actions": "^7.6.17",
+    "@storybook/addon-backgrounds": "^7.6.17",
+    "@storybook/addon-controls": "^7.6.17",
+    "@storybook/addon-docs": "^7.6.17",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-outline": "^7.6.17",
+    "@storybook/addon-toolbars": "^7.6.17",
+    "@storybook/addon-viewport": "^7.6.17",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/builder-vite": "^7.6.17",
+    "@storybook/manager-api": "7",
+    "@storybook/test": "^7.6.17",
+    "@storybook/theming": "7",
+    "@storybook/vue3": "^7.6.17",
+    "@storybook/vue3-vite": "^7.6.17",
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "lerna": "^8.1.2",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.38",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.75.0",
+    "storybook": "^7.6.17",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.2",
+    "vue-tsc": "^2.0.6"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "vue": "^3.4.21"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "pnpm": {
+    "overrides": {
+      "@vitejs/plugin-vue": "$@vitejs/plugin-vue",
+      "autoprefixer": "$autoprefixer",
+      "postcss": "$postcss",
+      "sass": "$sass",
+      "tailwindcss": "$tailwindcss",
+      "typescript": "$typescript",
+      "vite": "$vite",
+      "vite-plugin-dts": "$vite-plugin-dts",
+      "vue-tsc": "$vue-tsc",
+      "@vueuse/core": "$@vueuse/core",
+      "vue": "$vue"
+    }
+  }
+}
