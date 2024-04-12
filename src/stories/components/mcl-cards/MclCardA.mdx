@@ -1,0 +1,54 @@
+import { ArgsTable, Canvas, Controls, Meta, Story } from '@storybook/blocks'
+import * as Stories from './mcl-card-a/mclCardA.stories'
+
+<Meta of={Stories} />
+
+# MCL Card A
+
+Included in `@bobbykim/mcl-cards`
+
+## Installation
+
+```sh
+npm i @bobbykim/mcl-cards
+```
+
+## Usage
+
+In your code
+
+```js
+<script setup lang="ts">
+import {MclCardA} from '@bobbykim/mcl-cards'
+
+</script>
+
+<template>
+  <mcl-card-a></mcl-card-a>
+</template>
+```
+
+<Canvas of={Stories.MclCardAExample} />
+
+## Controls
+
+<Controls of={Stories.MclCardAExample} />
+
+## types
+
+```ts
+interface CardClickEvent {
+  title: string
+  url: string
+  target?: CtaTarget
+}
+```
+
+## Events
+
+- `card-btn-click` - (event: Event, item: CardClickEvent) - Emitted on cta click when cta-as-link prop is disabled
+- `card-click` - (event: Event, item: CardClickEvent) - Emitted on card click
+
+### Slot
+
+-Default slot

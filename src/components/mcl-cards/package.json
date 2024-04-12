@@ -1,0 +1,47 @@
+{
+  "name": "@bobbykim/mcl-cards",
+  "version": "0.4.0",
+  "description": "",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/mcl-cards.cjs",
+  "module": "./dist/mcl-cards.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mcl-cards.js",
+      "require": "./dist/mcl-cards.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly"
+  },
+  "author": {
+    "name": "Bobby Kim",
+    "url": "https://www.devbobbykim.com/"
+  },
+  "homepage": "https://manguito-component-library.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbykim89/manguito-component-library.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@bobbykim/manguito-theme": "workspace:*",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.75.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  }
+}
