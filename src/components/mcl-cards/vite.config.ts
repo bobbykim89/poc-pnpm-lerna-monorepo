@@ -10,10 +10,13 @@ export default defineConfig({
       // entry: resolve(__dirname, 'index.ts'),
       // name: 'MclCards',
       // fileName: 'mcl-cards',
-      entry: {
-        'mcl-cards': resolve(__dirname, 'index.ts'),
-      },
-      formats: ['es', 'cjs'],
+      entry: resolve(__dirname, 'index.ts'),
+      name: 'MclCards',
+      fileName: 'mcl-cards',
+      // entry: {
+      //   'mcl-cards': resolve(__dirname, 'index.ts'),
+      // },
+      // formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: ['vue'],
