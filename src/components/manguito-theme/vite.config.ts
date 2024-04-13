@@ -1,10 +1,19 @@
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    cssInjectedByJsPlugin({
+      jsAssetsFilterFunction: (outoutChunk) => {
+        console.log('filename', outoutChunk.fileName)
+        return outoutChunk.fileName.includes('core')
+      },
+    }),
+  ],
   build: {
     lib: {
       // entry: resolve(__dirname, 'index.ts'),

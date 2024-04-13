@@ -12,6 +12,7 @@ overrides:
   tailwindcss: ^3.4.3
   typescript: ^5.2.2
   vite: ^5.2.0
+  vite-plugin-css-injected-by-js: ^3.5.0
   vite-plugin-dts: ^3.8.2
   vue-tsc: ^2.0.6
   '@vueuse/core': ^10.9.0
@@ -121,6 +122,9 @@ importers:
       vite:
         specifier: ^5.2.0
         version: 5.2.8(@types/node@20.12.7)(sass@1.75.0)
+      vite-plugin-css-injected-by-js:
+        specifier: ^3.5.0
+        version: 3.5.0(vite@5.2.8)
       vite-plugin-dts:
         specifier: ^3.8.2
         version: 3.8.2(@types/node@20.12.7)(typescript@5.4.5)(vite@5.2.8)
@@ -152,9 +156,9 @@ importers:
       vite:
         specifier: ^5.2.0
         version: 5.2.8(@types/node@20.12.7)(sass@1.75.0)
-      vite-plugin-dts:
-        specifier: ^3.8.2
-        version: 3.8.2(@types/node@20.12.7)(typescript@5.4.5)(vite@5.2.8)
+      vite-plugin-css-injected-by-js:
+        specifier: ^3.5.0
+        version: 3.5.0(vite@5.2.8)
       vue-tsc:
         specifier: ^2.0.6
         version: 2.0.13(typescript@5.4.5)
@@ -10970,6 +10974,14 @@ packages:
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+    dev: true
+
+  /vite-plugin-css-injected-by-js@3.5.0(vite@5.2.8):
+    resolution: {integrity: sha512-d0QaHH9kS93J25SwRqJNEfE29PSuQS5jn51y9N9i2Yoq0FRO7rjuTeLvjM5zwklZlRrIn6SUdtOEDKyHokgJZg==}
+    peerDependencies:
+      vite: ^5.2.0
+    dependencies:
+      vite: 5.2.8(@types/node@20.12.7)(sass@1.75.0)
     dev: true
 
   /vite-plugin-dts@3.8.2(@types/node@20.12.7)(typescript@5.4.5)(vite@5.2.8):

@@ -44,6 +44,7 @@
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
+    "vite-plugin-css-injected-by-js": "^3.5.0",
     "vite-plugin-dts": "^3.8.2",
     "vue-tsc": "^2.0.6"
   },
@@ -61,6 +62,7 @@
       "tailwindcss": "$tailwindcss",
       "typescript": "$typescript",
       "vite": "$vite",
+      "vite-plugin-css-injected-by-js": "$vite-plugin-css-injected-by-js",
       "vite-plugin-dts": "$vite-plugin-dts",
       "vue-tsc": "$vue-tsc",
       "@vueuse/core": "$@vueuse/core",

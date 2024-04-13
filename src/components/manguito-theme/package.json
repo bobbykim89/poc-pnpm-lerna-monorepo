@@ -19,8 +19,7 @@
       "import": "./dist/mcl-theme.js",
       "require": "./dist/mcl-theme.cjs",
       "types": "./dist/mclTheme.d.ts"
-    },
-    "./styles.css": "./dist/styles.css"
+    }
   },
   "scripts": {
     "dev": "vite",
@@ -37,6 +36,7 @@
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
+    "vite-plugin-css-injected-by-js": "^3.5.0",
     "vue-tsc": "^2.0.6"
   }
 }

@@ -1,12 +1,5 @@
 <script setup lang="ts">
-import {
-  Transition,
-  computed,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-  watch,
-} from 'vue'
+import { Transition, computed, ref, watch } from 'vue'
 import type { ColorPalette, DirectionX } from '../../index'
 import generateClass, { vClickOutside } from '../../index'
 import { observeVisibleAttr } from '../composables'
@@ -101,7 +94,7 @@ const onAfterLeave = () => {
 const handleVisibility = (visible: boolean = false) => {
   toggle.value = visible
 }
-const observer = observeVisibleAttr(handleVisibility)
+observeVisibleAttr(sidebarRef, handleVisibility)
 
 watch(
   () => props.visible,
@@ -120,14 +113,6 @@ defineExpose({
   toggle: toggleSidebar,
   open: openSidebar,
   close: closeSidebar,
-})
-onMounted(() => {
-  if (sidebarRef.value) {
-    observer.observe(sidebarRef.value, { attributes: true })
-  }
-})
-onBeforeUnmount(() => {
-  observer.disconnect()
 })
 </script>
 
