@@ -6,13 +6,13 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/mcl-cards.cjs",
+  "main": "./dist/mcl-cards.umd.cjs",
   "module": "./dist/mcl-cards.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/mcl-cards.js",
-      "require": "./dist/mcl-cards.cjs",
+      "require": "./dist/mcl-cards.umd.cjs",
       "types": "./dist/index.d.ts"
     },
     "./styles.css": "./dist/styles.css"
