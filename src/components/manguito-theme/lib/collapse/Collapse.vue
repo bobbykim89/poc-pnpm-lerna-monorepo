@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Transition, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { observeVisibleAttr } from '../composables'
+import { Transition, ref, watch } from 'vue'
+import { ClientOnlyRender, observeVisibleAttr } from '../composables'
 
 const props = withDefaults(
   defineProps<{
@@ -67,7 +67,8 @@ const onLeave = (el: any) => {
 const handleVisibility = (visible: boolean = false) => {
   toggle.value = visible
 }
-const observer = observeVisibleAttr(handleVisibility)
+
+observeVisibleAttr(collapseRef, handleVisibility)
 
 watch(
   () => props.visible,
@@ -87,32 +88,26 @@ defineExpose({
   close: closeCollapse,
   open: openCollapse,
 })
-onMounted(() => {
-  if (collapseRef.value) {
-    observer.observe(collapseRef.value, { attributes: true })
-  }
-})
-onBeforeUnmount(() => {
-  observer.disconnect()
-})
 </script>
 
 <template>
   <div :accordion="accordion" :visible="toggle" ref="collapseRef">
-    <transition
-      name="collapse"
-      tag="div"
-      @enter="onEnter"
-      @after-enter="onAfterEnter"
-      @leave="onLeave"
-      class="overflow-y-clip"
-    >
-      <div v-show="toggle">
-        <div :class="[className]">
-          <slot />
+    <client-only-render>
+      <transition
+        name="collapse"
+        tag="div"
+        @enter="onEnter"
+        @after-enter="onAfterEnter"
+        @leave="onLeave"
+        class="overflow-y-clip"
+      >
+        <div v-show="toggle">
+          <div :class="[className]">
+            <slot />
+          </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </client-only-render>
   </div>
 </template>
 

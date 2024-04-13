@@ -15,7 +15,7 @@
       "require": "./dist/mcl-cards.umd.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./dist/styles.css"
+    "./style.css": "./dist/style.css"
   },
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly"
